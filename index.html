@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国際空調興業｜川口市のエアコンクリーニング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#122747;
+    --navy-2:#1c3866;
+    --ice:#eef4fb;
+    --white:#ffffff;
+    --cyan:#3fa9dc;
+    --ember:#ff6a3d;
+    --ink:#1a2230;
+    --muted:#5c6b80;
+    --line-green:#06c755;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans JP", sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:"Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight:900;
+    letter-spacing:.02em;
+  }
+  .mono{font-family:"Roboto Mono", monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:640px){ section{padding:56px 0;} }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,39,71,.96);
+    backdrop-filter:blur(6px);
+    color:var(--white);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:1080px; margin:0 auto;
+  }
+  .brand{font-size:18px; font-weight:700; letter-spacing:.04em;}
+  .brand small{display:block; font-size:10px; font-weight:400; letter-spacing:.2em; color:var(--cyan); font-family:"Noto Sans JP";}
+  .nav-cta{
+    background:var(--line-green); color:#fff; padding:9px 18px; border-radius:999px;
+    font-size:14px; font-weight:700; white-space:nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, #0d1c33 100%);
+    color:var(--white);
+    padding:72px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-120px; top:-120px; width:420px; height:420px;
+    background:radial-gradient(circle, rgba(63,169,220,.28), transparent 70%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;
+    position:relative; z-index:1;
+  }
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; letter-spacing:.14em; color:var(--cyan); font-weight:700;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:"◆"; font-size:10px;}
+  .hero h1{
+    font-size:clamp(30px,4.6vw,46px);
+    line-height:1.35;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--cyan);
+    background:linear-gradient(180deg, transparent 62%, rgba(63,169,220,.35) 62%);
+  }
+  .hero p.lead{
+    color:#c7d4e6; font-size:16px; max-width:46ch; margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:999px; font-weight:700; font-size:15px;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--line-green); color:#fff;}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4); color:#fff;}
+
+  /* signature: grime reveal slider */
+  .reveal-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:18px;
+  }
+  .reveal-label{
+    display:flex; justify-content:space-between; font-size:12px; letter-spacing:.08em;
+    color:#9fb2cc; margin-bottom:10px; font-weight:700;
+  }
+  .reveal{
+    position:relative; width:100%; aspect-ratio:4/3; border-radius:10px; overflow:hidden;
+    background:#0a1626;
+  }
+  .reveal .layer{position:absolute; inset:0;}
+  .layer.dirty{
+    background-image:url('assets/before.jpg');
+    background-size:cover; background-position:center;
+  }
+  .layer.clean{
+    background-image:url('assets/after.jpg');
+    background-size:cover; background-position:center;
+    clip-path:inset(0 50% 0 0);
+  }
+  .reveal input[type=range]{
+    position:absolute; inset:auto 0 10px 0; width:calc(100% - 20px); margin:0 10px;
+    -webkit-appearance:none; appearance:none; height:4px; background:rgba(255,255,255,.5); border-radius:4px; z-index:3;
+  }
+  .reveal input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:26px; height:26px; border-radius:50%;
+    background:var(--white); border:3px solid var(--cyan); cursor:pointer;
+  }
+  .reveal-tag{
+    position:absolute; top:10px; font-size:11px; font-weight:700; padding:4px 10px;
+    border-radius:999px; z-index:2; letter-spacing:.05em;
+  }
+  .reveal-tag.before{left:10px; background:#3a2f18; color:#f0d9a0;}
+  .reveal-tag.after{right:10px; background:#e6f3fb; color:#146a99;}
+  .reveal-caption{font-size:12px; color:#9fb2cc; margin-top:10px; text-align:center;}
+
+  /* ---------- Trust bar ---------- */
+  .trust{
+    background:var(--ice);
+    display:grid; grid-template-columns:repeat(3,1fr); text-align:center;
+  }
+  .trust .item{padding:32px 16px; border-right:1px solid #d9e4f2;}
+  .trust .item:last-child{border-right:none;}
+  .trust .num{font-size:clamp(28px,4vw,40px); font-weight:700; color:var(--navy);}
+  .trust .num span{font-size:16px; font-weight:500; color:var(--muted);}
+  .trust .cap{font-size:13px; color:var(--muted); margin-top:4px; letter-spacing:.04em;}
+  @media (max-width:640px){ .trust{grid-template-columns:1fr;} .trust .item{border-right:none; border-bottom:1px solid #d9e4f2;} .trust .item:last-child{border-bottom:none;} }
+
+  /* ---------- Section headers ---------- */
+  .sec-head{margin-bottom:44px; text-align:center;}
+  .sec-head .eyebrow{color:var(--ember);}
+  .sec-head .eyebrow::before{content:"◆"; color:var(--ember);}
+  .sec-head h2{font-size:clamp(24px,3.4vw,32px); color:var(--navy);}
+  .sec-head p{color:var(--muted); margin-top:10px;}
+
+  /* ---------- Voice cards ---------- */
+  .voices{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:760px){ .voices{grid-template-columns:1fr;} }
+  .voice{
+    background:var(--ice); border-radius:var(--radius); padding:26px;
+    border:1px solid #dbe6f4; position:relative;
+  }
+  .voice::before{content:"“"; position:absolute; top:6px; left:16px; font-size:44px; color:#c3d7ec; font-family:Georgia,serif;}
+  .voice p{position:relative; z-index:1; color:var(--ink); font-size:14.5px;}
+  .voice .stars{color:#f0a80c; margin-bottom:10px; font-size:14px;}
+
+  /* ---------- Pricing ---------- */
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:760px){ .price-grid{grid-template-columns:1fr;} }
+  .price-card{
+    border:1px solid #dde6f0; border-radius:var(--radius); padding:30px 24px; text-align:center;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .price-card:hover{box-shadow:0 16px 40px rgba(18,39,71,.1); transform:translateY(-4px);}
+  .price-card.featured{border-color:var(--cyan); box-shadow:0 16px 40px rgba(63,169,220,.18); position:relative;}
+  .price-card.featured::before{
+    content:"人気"; position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--ember); color:#fff; font-size:12px; font-weight:700; padding:4px 14px; border-radius:999px;
+  }
+  .price-card h3{font-size:16px; color:var(--navy); margin-bottom:18px; font-weight:700;}
+  .price-card .amount{font-size:38px; font-weight:700; color:var(--navy);}
+  .price-card .amount span{font-size:14px; font-weight:500; color:var(--muted);}
+  .price-note{text-align:center; font-size:12.5px; color:var(--muted); margin-top:22px;}
+
+  .options{
+    margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  }
+  @media (max-width:640px){ .options{grid-template-columns:1fr;} }
+  .option{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    background:var(--ice); border-radius:10px; padding:16px 20px; border:1px solid #dbe6f4;
+  }
+  .option .name{font-weight:700; color:var(--navy); font-size:14.5px;}
+  .option .desc{font-size:12.5px; color:var(--muted); margin-top:2px;}
+  .option .plus{font-weight:700; color:var(--ember); white-space:nowrap;}
+
+  /* ---------- Features ---------- */
+  .features{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width:860px){ .features{grid-template-columns:repeat(2,1fr);} }
+  .feature{text-align:center; padding:10px;}
+  .feature .icon{
+    width:56px; height:56px; margin:0 auto 16px; border-radius:50%;
+    background:var(--navy); color:var(--cyan); display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+  }
+  .feature h3{font-size:14.5px; color:var(--navy); margin-bottom:6px;}
+  .feature p{font-size:12.5px; color:var(--muted);}
+
+  /* ---------- Contact / LINE ---------- */
+  .contact-band{background:var(--line-green); color:#fff;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
+  @media (max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-grid h2{color:#fff; font-size:24px; margin-bottom:14px;}
+  .contact-grid ul{list-style:none; margin-top:16px;}
+  .contact-grid li{padding:6px 0; font-size:14.5px; display:flex; gap:8px;}
+  .contact-grid li::before{content:"✓";font-weight:700;}
+  .why-not-call{
+    background:rgba(255,255,255,.14); border-radius:var(--radius); padding:22px; font-size:13.5px;
+  }
+  .why-not-call strong{display:block; font-size:15px; margin-bottom:8px;}
+
+  /* ---------- Area ---------- */
+  .area-card{
+    background:var(--navy); color:#fff; border-radius:var(--radius); padding:40px;
+    display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;
+  }
+  @media (max-width:700px){ .area-card{grid-template-columns:1fr;} }
+  .area-card h3{font-size:22px; margin-bottom:10px;}
+  .area-card .big{color:var(--cyan); font-size:30px;}
+  .area-ring{
+    width:180px; height:180px; border-radius:50%; margin:0 auto;
+    background:radial-gradient(circle, rgba(63,169,220,.5), rgba(63,169,220,.05) 70%);
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .area-ring::before, .area-ring::after{
+    content:""; position:absolute; border:1px dashed rgba(63,169,220,.5); border-radius:50%;
+  }
+  .area-ring::before{inset:20px;}
+  .area-ring::after{inset:40px;}
+  .area-ring span{background:#fff; color:var(--navy); font-weight:700; font-size:13px; padding:6px 14px; border-radius:999px; z-index:1;}
+
+  /* ---------- Footer ---------- */
+  footer{background:#0d1c33; color:#9fb2cc; padding:56px 0 36px; font-size:13.5px;}
+  .foot-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px;}
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; text-align:left;} }
+  .foot-grid h4{color:#fff; font-size:14px; margin-bottom:14px; letter-spacing:.05em;}
+  .foot-brand{font-family:"Zen Kaku Gothic New"; font-weight:900; color:#fff; font-size:18px; margin-bottom:8px;}
+  .foot-meta{margin-top:14px; color:#6d80a0; font-size:12px;}
+  footer a:hover{color:#fff;}
+  .foot-line-btn{
+    display:inline-block; margin-top:14px; background:var(--line-green); color:#fff;
+    padding:10px 20px; border-radius:999px; font-weight:700;
+  }
+  .foot-bottom{
+    border-top:1px solid #1c2c47; margin-top:40px; padding-top:20px; text-align:center; color:#5c6b84; font-size:12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">国際空調興業<small>KOKUSAI AIR SERVICE</small></div>
+    <a class="nav-cta" href="#contact">LINEで相談</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">川口市から1時間圏内対応</div>
+      <h1>新品の頃の<em>輝きと快適さ</em>を、<br>元エアコン屋の私にお任せください。</h1>
+      <p class="lead">分解洗浄で、見えない場所のカビ・ホコリ・ニオイまで根こそぎスッキリ。業歴13年以上、口コミ933件以上・高評価4.96の実績です。</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">📱 LINEで予約・見積り</a>
+        <a class="btn btn-ghost" href="#price">料金を見る</a>
+      </div>
+    </div>
+    <div class="reveal-card">
+      <div class="reveal-label"><span>熱交換器 洗浄前後（実際の施工写真）</span><span>← ドラッグ →</span></div>
+      <div class="reveal">
+        <div class="layer dirty"></div>
+        <div class="layer clean" id="cleanLayer"></div>
+        <span class="reveal-tag before">洗浄前</span>
+        <span class="reveal-tag after">洗浄後</span>
+        <input type="range" min="0" max="100" value="50" id="revealRange">
+      </div>
+      <div class="reveal-caption">スライダーを動かすと、洗浄前後の違いがわかります</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="item"><div class="num mono">933<span>件以上</span></div><div class="cap">大手マッチングサイト口コミ</div></div>
+  <div class="item"><div class="num mono">4.96<span>／5.0</span></div><div class="cap">お客様からの高評価</div></div>
+  <div class="item"><div class="num mono">13<span>年以上</span></div><div class="cap">元エアコン屋としての業歴</div></div>
+</div>
+
+<section id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">お客様の声</div>
+      <h2>たくさんの嬉しいお声をいただいています</h2>
+      <p>※2026年5月時点</p>
+    </div>
+    <div class="voices">
+      <div class="voice"><div class="stars">★★★★★</div><p>丁寧で安心して任せられました！</p></div>
+      <div class="voice"><div class="stars">★★★★★</div><p>説明がわかりやすく、またお願いしたいです。</p></div>
+      <div class="voice"><div class="stars">★★★★★</div><p>エアコンの効きが良くなりました！</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="price" style="background:var(--ice)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">料金表（税込）</div>
+      <h2>わかりやすい、明朗会計</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>壁掛けエアコン</h3>
+        <div class="amount mono">8,000<span>円</span></div>
+      </div>
+      <div class="price-card featured">
+        <h3>お掃除機能付きエアコン</h3>
+        <div class="amount mono">14,000<span>円</span></div>
+      </div>
+      <div class="price-card">
+        <h3>業務用エアコン</h3>
+        <div class="amount mono">16,000<span>円</span></div>
+      </div>
+    </div>
+    <p class="price-note">※駐車場代は別途ご負担をお願いいたします。</p>
+
+    <div class="options">
+      <div class="option">
+        <div><div class="name">室外機の洗浄</div><div class="desc">熱交換器・ファンを洗浄し、効率アップ＆電気代の節約に</div></div>
+        <div class="plus mono">+3,000円</div>
+      </div>
+      <div class="option">
+        <div><div class="name">抗菌コート</div><div class="desc">カビや細菌の繁殖を抑え、キレイが長持ち</div></div>
+        <div class="plus mono">+2,000円</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">選ばれる理由</div>
+      <h2>元エアコン屋だからできる、安心のクリーニング</h2>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="icon">🔧</div><h3>しっかり分解洗浄</h3><p>内部まで徹底的に洗います</p></div>
+      <div class="feature"><div class="icon">📋</div><h3>作業前後の説明</h3><p>安心・納得の丁寧な対応</p></div>
+      <div class="feature"><div class="icon">✨</div><h3>多数の実績</h3><p>ニオイ・効きの改善に自信</p></div>
+      <div class="feature"><div class="icon">💙</div><h3>お子様・ペットも安心</h3><p>いるご家庭でも安全に施工</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="area" style="background:var(--ice)">
+  <div class="wrap">
+    <div class="area-card">
+      <div>
+        <h3>対応エリア</h3>
+        <p class="big display">川口市から1時間圏内対応！</p>
+        <p style="margin-top:10px; color:#c7d4e6;">その他エリアもご相談ください。</p>
+      </div>
+      <div class="area-ring"><span>川口市</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-band" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow" style="color:#eafff0;">ご予約・お問い合わせ</div>
+      <h2>ご連絡はLINE公式が一番スムーズです</h2>
+      <ul>
+        <li>24時間いつでもメッセージOK</li>
+        <li>写真や動画も簡単に送れる</li>
+        <li>返信が早く、やり取りがスムーズ</li>
+        <li>お見積り・ご相談だけでもお気軽にどうぞ</li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div style="background:#fff; border-radius:var(--radius); padding:20px; text-align:center;">
+        <img src="assets/line-qr.png" alt="LINE公式アカウントQRコード" style="width:160px; margin:0 auto 10px;">
+        <div style="color:var(--line-green); font-weight:700; font-size:14px;">友だち追加はこのQRコードから</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">国際空調興業</div>
+      <p>代表　野上裕輔（のがみ ゆうき）<br>業歴13年以上の元エアコン屋が、心をこめて丁寧に作業いたします。</p>
+      <div style="display:flex; align-items:center; gap:12px; margin-top:16px;">
+        <img src="assets/line-qr.png" alt="LINE公式アカウントQRコード" style="width:70px; border-radius:6px; background:#fff; padding:4px;">
+        <span style="font-size:12.5px;">友だち追加で簡単予約！<br>QRコードを読み取ってください</span>
+      </div>
+    </div>
+    <div>
+      <h4>連絡先</h4>
+      <p>✉ ttyuuki0628@yahoo.co.jp</p>
+    </div>
+    <div>
+      <h4>対応エリア</h4>
+      <p>川口市から1時間圏内<br>その他エリアもご相談ください</p>
+      <div class="foot-meta">壁掛け 8,000円〜／業務用 16,000円〜（税込）</div>
+    </div>
+  </div>
+  <div class="foot-bottom">© 国際空調興業</div>
+</footer>
+
+<script>
+  const range = document.getElementById('revealRange');
+  const clean = document.getElementById('cleanLayer');
+  range.addEventListener('input', () => {
+    clean.style.clipPath = `inset(0 ${100 - range.value}% 0 0)`;
+  });
+</script>
+
+</body>
+</html>
