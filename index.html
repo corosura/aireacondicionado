@@ -218,6 +218,58 @@
   .feature h3{font-size:14.5px; color:var(--navy); margin-bottom:6px;}
   .feature p{font-size:12.5px; color:var(--muted);}
 
+  /* ---------- Profile / Story ---------- */
+  .profile-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  @media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
+  .profile-card{background:var(--ice); border:1px solid #dbe6f4; border-radius:var(--radius); padding:26px;}
+  .profile-card h3{color:var(--navy); font-size:16px; margin-bottom:12px;}
+  .profile-card p{font-size:14px; color:var(--ink); margin-bottom:8px;}
+  .profile-card .tag{
+    display:inline-block; background:var(--navy); color:#fff; font-size:11.5px; font-weight:700;
+    padding:3px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .family-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;}
+  @media (max-width:480px){ .family-grid{grid-template-columns:1fr;} }
+  .family-card{background:#fff; border:1px solid #dbe6f4; border-radius:10px; padding:12px 14px;}
+  .family-card .role{font-weight:700; color:var(--navy); font-size:13px;}
+  .family-card .note{font-size:12.5px; color:var(--muted); margin-top:2px;}
+
+  /* ---------- Steps / Flow ---------- */
+  .steps{display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:10px;}
+  @media (max-width:860px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .steps{grid-template-columns:1fr;} }
+  .step{background:var(--ice); border:1px solid #dbe6f4; border-radius:var(--radius); padding:20px 16px; position:relative;}
+  .step .num{
+    width:32px; height:32px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:12px;
+  }
+  .step h4{font-size:13.5px; color:var(--navy); margin-bottom:6px;}
+  .step p{font-size:12px; color:var(--muted); line-height:1.6;}
+  .time-note{
+    margin-top:24px; background:var(--ice); border:1px solid #dbe6f4; border-radius:var(--radius);
+    padding:18px 22px; font-size:13.5px; color:var(--ink);
+  }
+  .time-note strong{color:var(--navy);}
+
+  /* ---------- Notices ---------- */
+  .notice-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:760px){ .notice-grid{grid-template-columns:1fr;} }
+  .notice-card{background:#fff; border:1px solid #dde6f0; border-radius:var(--radius); padding:22px;}
+  .notice-card h4{color:var(--navy); font-size:14.5px; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .notice-card h4::before{content:"⚠"; color:var(--ember); font-size:13px;}
+  .notice-card ul{list-style:none;}
+  .notice-card li{
+    font-size:12.8px; color:var(--muted); line-height:1.7; padding-left:16px; position:relative; margin-bottom:6px;
+  }
+  .notice-card li::before{content:"・"; position:absolute; left:0; color:var(--cyan);}
+  .unavail-list{
+    background:var(--ice); border-radius:10px; padding:16px 20px; margin-top:10px; font-size:12.8px; color:var(--ink);
+  }
+  .unavail-list .models{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0;}
+  .unavail-list .models span{
+    background:#fff; border:1px solid #dbe6f4; border-radius:999px; padding:4px 12px; font-size:12px; color:var(--navy);
+  }
+
   /* ---------- Contact / LINE ---------- */
   .contact-band{background:var(--line-green); color:#fff;}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
@@ -282,7 +334,7 @@
     <div>
       <div class="eyebrow">川口市から1時間圏内対応</div>
       <h1>新品の頃の<em>輝きと快適さ</em>を、<br>元エアコン屋の私にお任せください。</h1>
-      <p class="lead">分解洗浄で、見えない場所のカビ・ホコリ・ニオイまで根こそぎスッキリ。業歴13年以上、口コミ933件以上・高評価4.96の実績です。</p>
+      <p class="lead">分解洗浄で、見えない場所のカビ・ホコリ・ニオイまで根こそぎスッキリ。業歴13年以上、口コミ1000件以上・高評価4.96の実績です。</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contact">📱 LINEで予約・見積り</a>
         <a class="btn btn-ghost" href="#price">料金を見る</a>
@@ -303,9 +355,9 @@
 </section>
 
 <div class="trust">
-  <div class="item"><div class="num mono">933<span>件以上</span></div><div class="cap">大手マッチングサイト口コミ</div></div>
+  <div class="item"><div class="num mono">1000<span>件以上</span></div><div class="cap">大手マッチングサイト口コミ</div></div>
   <div class="item"><div class="num mono">4.96<span>／5.0</span></div><div class="cap">お客様からの高評価</div></div>
-  <div class="item"><div class="num mono">13<span>年以上</span></div><div class="cap">元エアコン屋としての業歴</div></div>
+  <div class="item"><div class="num mono">13<span>年以上</span></div><div class="cap">元エアコン屋とエアコンクリーニング屋としての業歴</div></div>
 </div>
 
 <section id="voices">
@@ -347,14 +399,15 @@
 
     <div class="options">
       <div class="option">
-        <div><div class="name">室外機の洗浄</div><div class="desc">熱交換器・ファンを洗浄し、効率アップ＆電気代の節約に</div></div>
+        <div><div class="name">室外機の洗浄</div><div class="desc">熱交換器にカビ・ホコリが溜まると電気効率が悪化し、汚れがひどいと冷房異常の原因にも。分解しない状態で熱交換器・ファン・全体を洗浄します（後ろから洗浄できない場合は分解して対応）</div></div>
         <div class="plus mono">+3,000円</div>
       </div>
       <div class="option">
-        <div><div class="name">抗菌コート</div><div class="desc">カビや細菌の繁殖を抑え、キレイが長持ち</div></div>
+        <div><div class="name">消臭抗菌コート</div><div class="desc">リンダの消臭抗菌コートを使用。内部をブロワーで乾燥させてから熱交換器に噴霧し、吹き出し口に薄く塗布。消臭・カビ防止に効果があります</div></div>
         <div class="plus mono">+2,000円</div>
       </div>
     </div>
+    <p class="price-note">※お掃除機能付きエアコンは全機種、お掃除ロボの部品も分解して洗浄します（設置状況によって外せない場合あり）。型式が分からない場合はお調べしますのでご相談ください。</p>
   </div>
 </section>
 
@@ -373,6 +426,45 @@
   </div>
 </section>
 
+<section id="profile" style="background:var(--ice)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">代表紹介</div>
+      <h2>国際空調興業 野上より、ご挨拶</h2>
+      <p>数あるお店の中から当店のページをご覧いただき、ありがとうございます。</p>
+    </div>
+    <div class="profile-grid" style="grid-template-columns:1fr; max-width:640px; margin:0 auto;">
+      <div class="profile-card">
+        <span class="tag">経歴</span>
+        <h3>元エアコン屋、業歴13年以上</h3>
+        <p>エアコン屋（修理・メンテナンス）で7年間勤務し、3年目〜7年目まではエリア責任者を担当。2020年に独立しました。</p>
+        <p>ルームエアコンの取付け・取り外し・洗浄・点検・修理のほか、GHPやチラー、冷凍機の点検・修理、ポンプオーバーホール、配管改修、水栓の交換・修理、換気扇の修理・清掃・取付取り外し、給排気ファンやボイラーの点検なども経験してきました。</p>
+        <p>万が一洗浄の際に不具合が出ても自分で修理できますのでご安心ください。忙しい時期はメーカーの手配も行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">作業の流れ</div>
+      <h2>ご予約から仕上げまで</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>事前準備</h4><p>ブレーカーの確認、エアコン下の作業スペースの確保をお願いします。コンセントタイプの場合はブレーカーを落としません。</p></div>
+      <div class="step"><div class="num">2</div><h4>養生</h4><p>エアコンの周りと床が汚れないよう、しっかり養生します。</p></div>
+      <div class="step"><div class="num">3</div><h4>試運転・分解洗浄</h4><p>試運転で問題がなければ分解し、部品およびエアコン内部を高圧洗浄します。</p></div>
+      <div class="step"><div class="num">4</div><h4>組立・試運転</h4><p>分解した部品を取り付け、再度試運転を実施します。</p></div>
+      <div class="step"><div class="num">5</div><h4>仕上げ確認</h4><p>拭き上げを行い、お客様にご確認いただきます。</p></div>
+    </div>
+    <div class="time-note">
+      <strong>作業時間の目安（1人作業の場合）</strong><br>
+      お掃除機能なし：1台あたり1時間〜1時間半／お掃除機能あり：1台あたり1時間〜2時間半
+    </div>
+  </div>
+</section>
+
 <section id="area" style="background:var(--ice)">
   <div class="wrap">
     <div class="area-card">
@@ -382,6 +474,55 @@
         <p style="margin-top:10px; color:#c7d4e6;">その他エリアもご相談ください。</p>
       </div>
       <div class="area-ring"><span>川口市</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="notice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">ご利用にあたってのお願い</div>
+      <h2>ご予約前に必ずご確認ください</h2>
+    </div>
+    <div class="notice-grid">
+      <div class="notice-card">
+        <h4>洗浄・仕上がりについて</h4>
+        <ul>
+          <li>ヤニ・油・重度の汚れ・カビによる変色、銅合金の青緑変色、テープ跡などは完全には落とせない場合があります</li>
+          <li>臭いが気になる、吹き出し口から黒いゴミが出てくる場合は、他社で行われている完全分解をおすすめします。通常のクリーニングでできる限りきれいにいたしますのでご了承ください</li>
+          <li>クロス以外（塗壁・砂壁・木など）の壁の場合、洗浄跡が残る可能性があります。必ず事前にお知らせください</li>
+        </ul>
+      </div>
+      <div class="notice-card">
+        <h4>保証について</h4>
+        <ul>
+          <li>10年以上経過しているエアコンは保証できません。特にルーバー部は壊れやすい部分です</li>
+          <li>15年以上経過しているエアコンは、本体の更新をおすすめしており、破損リスクがあるため作業をお受けできません</li>
+          <li>パナソニックCSシリーズ（2011〜2014年製）は洗浄後に右端から水漏れする可能性があり、保証できません</li>
+          <li>手直し等は作業後1週間以内にご連絡ください</li>
+        </ul>
+      </div>
+      <div class="notice-card">
+        <h4>作業環境について</h4>
+        <ul>
+          <li>電気・水道を使用し、部品の洗い場としてお風呂や駐車場などをお借りします。洗浄機を回すため音が出ます</li>
+          <li>エアコンの下は作業スペースになるため、荷物や家具がある場合は事前の移動をお願いします</li>
+          <li>エアコン上下・左右にスペースがない場合、途中までしか分解できないことがあります</li>
+          <li>室外機の設置状況（天井吊り、体が入らない場所等）によっては洗浄できない場合があります。台風・雨天時は室外機洗浄のみキャンセルとなる場合があります</li>
+          <li>動作確認ができない、異音・故障がある場合は作業をお受けできないことがあります</li>
+          <li>脚立は3・4・6尺で対応します</li>
+        </ul>
+      </div>
+      <div class="notice-card">
+        <h4>ご予約・当日について</h4>
+        <ul>
+          <li>作業当日はご連絡がつくようにお願いします</li>
+          <li>返信がない場合はご予約をキャンセルさせていただきます</li>
+          <li>駐車場がない場合は近隣の有料駐車場を利用し、駐車場代のご負担をお願いします（リピートのお客様は駐車場代を当店で負担いたします）</li>
+          <li>駐車禁止エリアには路上駐車いたしません。マンションは管理人の許可がある場所に駐車いたします</li>
+          <li>近くに駐車場がない場合、作業できないことがあります。車は軽自動車ですが、高さ2.1m以上の駐車場が必要です</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -411,7 +552,7 @@
   <div class="wrap foot-grid">
     <div>
       <div class="foot-brand">国際空調興業</div>
-      <p>代表　野上裕輔（のがみ ゆうき）<br>業歴13年以上の元エアコン屋が、心をこめて丁寧に作業いたします。</p>
+      <p>代表　野上裕輔（のがみ ゆうき）<br>業歴13年以上の元エアコン屋とエアコンクリーニング屋が、心をこめて丁寧に作業いたします。</p>
       <div style="display:flex; align-items:center; gap:12px; margin-top:16px;">
         <img src="assets/line-qr.png" alt="LINE公式アカウントQRコード" style="width:70px; border-radius:6px; background:#fff; padding:4px;">
         <span style="font-size:12.5px;">友だち追加で簡単予約！<br>QRコードを読み取ってください</span>
